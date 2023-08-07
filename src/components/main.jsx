@@ -59,7 +59,7 @@ const Main = props => {
     const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
-      axios.get(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/tasks`, {
+      axios.get('https://main--snazzy-palmier-a86391.netlify.app:7000/tasks', {
         params: {
           email: location.state.email // Replace with the actual email
         }
@@ -73,7 +73,7 @@ const Main = props => {
     });
 
     const handleTaskCreate = (newTask) => {
-      axios.post(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/tasks`, newTask, {
+      axios.post('https://main--snazzy-palmier-a86391.netlify.app:7000/tasks', newTask, {
         params: {
           email: location.state.email // Replace with the actual email
         }
@@ -100,7 +100,7 @@ const Main = props => {
     };
 
     const handleTaskDelete = (taskId) => {
-      axios.delete(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/tasks/${taskId}`, {
+      axios.delete(`https://main--snazzy-palmier-a86391.netlify.app:7000/tasks/${taskId}`, {
         params: {
           email: location.state.email
         }
@@ -125,7 +125,7 @@ const Main = props => {
     };
 
     const handleTaskStatusUpdate = (taskId, newState) => {
-      axios.put(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/tasks/${taskId}`, null, {
+      axios.put(`https://main--snazzy-palmier-a86391.netlify.app:7000/tasks/${taskId}`, null, {
         params: {
           email: location.state.email, // Replace with the actual email
           done:newState
@@ -162,7 +162,7 @@ const Main = props => {
     
     const DeleteCompletedTasks = (email) => {
       axios
-        .delete(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/tasks`, {
+        .delete('https://main--snazzy-palmier-a86391.netlify.app:7000/tasks', {
           params: {
             email: location.state.email 
           }
@@ -218,7 +218,7 @@ const Main = props => {
       e.preventDefault();
 
       try{
-          await axios.post(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/profile`,{
+          await axios.post('https://main--snazzy-palmier-a86391.netlify.app:7000/profile',{
               email:location.state.email,password,phone,name,birthYear,tasks
           })
           .then(res=>{
