@@ -22,7 +22,7 @@ const Login = () => {
 
         try{
 
-            await axios.post('https://main--snazzy-palmier-a86391.netlify.app:7000',{
+            await axios.post(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}`,{
                 email,password
             })
             .then(res=>{

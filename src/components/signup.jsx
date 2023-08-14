@@ -35,7 +35,7 @@ const Signup = () => {
 
         try{
 
-            await axios.post('https://main--snazzy-palmier-a86391.netlify.app:7000/signup',{
+            await axios.post(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/signup`,{
                 email,password,phone,name,birthYear
             })
             .then(res=>{
