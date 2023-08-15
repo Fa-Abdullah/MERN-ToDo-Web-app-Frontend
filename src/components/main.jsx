@@ -73,14 +73,14 @@ const Main = props => {
     });
 
     const handleTaskCreate = (newTask) => {
-      axios.post(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/tasks`, newTask, {
+      axios.post(`${process.env.REACT_APP_HOST}/tasks`, newTask, {
         params: {
           email: location.state.email // Replace with the actual email
         }
       }) // Update the URL to your backend API endpoint
         .then((response) => {
           setTasks(response.data);
-        })
+        })  
         .catch((error) => {
           console.error('Error creating task:', error);
         });
