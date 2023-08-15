@@ -73,7 +73,7 @@ const Main = props => {
     });
 
     const handleTaskCreate = (newTask) => {
-      axios.post(`${process.env.REACT_APP_HOST}/tasks`, newTask, {
+      axios.post('https://mern-todo-list-85ni.onrender.com/tasks', newTask, {
         params: {
           email: location.state.email // Replace with the actual email
         }
