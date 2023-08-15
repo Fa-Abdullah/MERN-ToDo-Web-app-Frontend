@@ -35,7 +35,7 @@ const Signup = () => {
 
         try{
 
-            await axios.post('https://mern-todo-list-85ni.onrender.com:7000/signup',{
+            await axios.post('https://mern-todo-list-85ni.onrender.com/signup',{
                 email,password,phone,name,birthYear
             })
             .then(res=>{ 
