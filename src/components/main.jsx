@@ -59,7 +59,7 @@ const Main = props => {
     const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
-      axios.get(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/tasks`, {
+      axios.get('https://mern-todo-list-85ni.onrender.com/tasks', {
         params: {
           email: location.state.email // Replace with the actual email
         }
@@ -100,7 +100,7 @@ const Main = props => {
     };
 
     const handleTaskDelete = (taskId) => {
-      axios.delete(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/tasks/${taskId}`, {
+      axios.delete(`https://mern-todo-list-85ni.onrender.com/tasks/${taskId}`, {
         params: {
           email: location.state.email
         }
@@ -125,7 +125,7 @@ const Main = props => {
     };
 
     const handleTaskStatusUpdate = (taskId, newState) => {
-      axios.put(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/tasks/${taskId}`, null, {
+      axios.put(`https://mern-todo-list-85ni.onrender.com/tasks/${taskId}`, null, {
         params: {
           email: location.state.email, // Replace with the actual email
           done:newState
@@ -162,7 +162,7 @@ const Main = props => {
     
     const DeleteCompletedTasks = (email) => {
       axios
-        .delete(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/tasks`, {
+        .delete('https://mern-todo-list-85ni.onrender.com/tasks', {
           params: {
             email: location.state.email 
           }
@@ -218,7 +218,7 @@ const Main = props => {
       e.preventDefault();
 
       try{
-          await axios.post(`${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/profile`,{
+          await axios.post('https://mern-todo-list-85ni.onrender.com/profile',{
               email:location.state.email,password,phone,name,birthYear,tasks
           })
           .then(res=>{
