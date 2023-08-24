@@ -61,7 +61,7 @@ const Main = props => {
     useEffect(() => {
       axios.get('https://mern-todo-list-85ni.onrender.com/tasks', {
         params: {
-          email: location.state.email // Replace with the actual email
+          email: location.state.email 
         }
       })
         .then((response) => {
@@ -75,7 +75,7 @@ const Main = props => {
     const handleTaskCreate = (newTask) => {
       axios.post('https://mern-todo-list-85ni.onrender.com/tasks', newTask, {
         params: {
-          email: location.state.email // Replace with the actual email
+          email: location.state.email 
         }
       }) // Update the URL to your backend API endpoint
         .then((response) => {
@@ -127,10 +127,10 @@ const Main = props => {
     const handleTaskStatusUpdate = (taskId, newState) => {
       axios.put(`https://mern-todo-list-85ni.onrender.com/tasks/${taskId}`, null, {
         params: {
-          email: location.state.email, // Replace with the actual email
+          email: location.state.email,
           done:newState
         }
-      }) // Update the URL to your backend API endpoint
+      }) 
         .then((response) => {
           setTasks(response.data);
         })
